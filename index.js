@@ -4,7 +4,7 @@ const snakeSize = 30;
 const canvas = document.querySelector("canvas");
 const title = document.querySelector("h1");
 const ctx = canvas.getContext("2d");
-const fps = 9.5;
+let fps = 8;
 const TileCountX = canvas.width / snakeSize;
 const TileCountY = canvas.height / snakeSize;
 
@@ -70,6 +70,7 @@ function moveStuff(){
 
     //food-collision
     if (xpos === foodPosX && ypos === foodPosY) {
+        fps += 0.25;
         score++;
         title.textContent =+ score;
         snakeLenght++;
